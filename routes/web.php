@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+ 
+// routes/web.php
+
+Route::post('/import', [App\Http\Controllers\DocumentController::class, 'import'])->name('documents.import');
+Route::put('/process', [App\Http\Controllers\DocumentController::class, 'process'])->name('documents.process');
+
